@@ -1,0 +1,15 @@
+name: .ts File Push Event
+
+on:
+  push:
+    paths:
+      - "*.ts"
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push .ts File
+        run: |
+          echo ${{ github.event_name }}

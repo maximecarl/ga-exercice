@@ -1,0 +1,15 @@
+name: Only Dev Push Event
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push dev
+        run: |
+          echo ${{ github.event_name }}

@@ -1,0 +1,15 @@
+name: Specific file Push Event
+
+on:
+  push:
+    paths:
+      - "src/**"
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push edit src/
+        run: |
+          echo ${{ github.event_name }}

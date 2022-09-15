@@ -1,0 +1,15 @@
+name: Feat Push Event
+
+on:
+  push:
+    branches:
+      - "feat/*"
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push Feat
+        run: |
+          echo ${{ github.event_name }}

@@ -1,0 +1,15 @@
+name: Except Staging Push Event
+
+on:
+  push:
+    branches:
+      - "!staging"
+
+jobs:
+  print-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Push !Staging
+        run: |
+          echo ${{ github.event_name }}
